@@ -1,4 +1,4 @@
-name: Compile and run TypeScript (Math)
+name: Compile and run TypeScript
 
 on:
   push:
@@ -19,21 +19,13 @@ jobs:
           node-version: '20'
       
       - name: Install TypeScript
-        run: |
-          cd math-project
-          npm install
+        run: npm install
       
       - name: Compile TypeScript to JavaScript
-        run: |
-          cd math-project
-          npm run build
+        run: npm run build
       
       - name: Show compiled JavaScript
-        run: |
-          cd math-project
-          cat dist/math.js
+        run: cat dist/math.js
       
       - name: Run the program
-        run: |
-          cd math-project
-          node dist/math.js
+        run: node dist/math.js
