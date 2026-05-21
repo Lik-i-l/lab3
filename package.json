@@ -2,7 +2,7 @@
   "name": "typescript-math",
   "version": "1.0.0",
   "scripts": {
-    "build": "tsc math.ts --outDir dist"
+    "build": "tsc"
   },
   "devDependencies": {
     "typescript": "^5.0.0"
