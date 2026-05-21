@@ -1,0 +1,39 @@
+name: Compile and run TypeScript (Math)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  compile-and-run:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install TypeScript
+        run: |
+          cd math-project
+          npm install
+      
+      - name: Compile TypeScript to JavaScript
+        run: |
+          cd math-project
+          npm run build
+      
+      - name: Show compiled JavaScript
+        run: |
+          cd math-project
+          cat dist/math.js
+      
+      - name: Run the program
+        run: |
+          cd math-project
+          node dist/math.js
