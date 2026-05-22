@@ -5,9 +5,11 @@ export function f(x: number, b: number): number {
     return numerator / denominator;
 }
 
-// Запуск программы
 const b: number = 2.5;
 const xValues: number[] = [1.28, 3.28, 0.4, 1.1, 2.4, 3.6, 1.7, 3.9];
+
+console.log("Точные значения:");
 for (const x of xValues) {
-    console.log(`x = ${x}, y = ${f(x, b).toFixed(2)}`);
+    const y = f(x, b);
+    console.log(`x = ${x}, y = ${y}`);
 }
